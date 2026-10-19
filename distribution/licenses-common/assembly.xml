@@ -36,7 +36,7 @@
 
     <files>
         <file>
-            <source>../../LICENSE.txt</source>
+            <source>../../LICENSE-APACHE-2.0.txt</source>
             <destName>keycloak-components-license.txt</destName>
             <fileMode>0664</fileMode>
         </file>

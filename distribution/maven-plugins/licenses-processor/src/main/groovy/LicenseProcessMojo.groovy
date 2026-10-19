@@ -59,7 +59,7 @@ class LicenseProcessMojo extends AbstractMojo {
 
                 def newFilename = "${artifact.groupId},${artifact.artifactId},${artifact.version},${licenseName}.txt"
                 Path newFile = licenseFileRoot.resolve(newFilename)
-                InputStream originalLicense = this.class.getResourceAsStream("keycloak-licenses-common/LICENSE.txt")
+                InputStream originalLicense = this.class.getResourceAsStream("keycloak-licenses-common/LICENSE-APACHE-2.0.txt")
                 log.info("==> ${newFilename}")
                 Files.copy(originalLicense, newFile, StandardCopyOption.REPLACE_EXISTING)
             }

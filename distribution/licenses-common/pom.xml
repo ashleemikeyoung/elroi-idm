@@ -34,7 +34,7 @@
                 <targetPath>keycloak-licenses-common</targetPath>
                 <directory>../../</directory>
                 <includes>
-                    <include>LICENSE.txt</include>
+                    <include>LICENSE-APACHE-2.0.txt</include>
                 </includes>
             </resource>
             <resource>
