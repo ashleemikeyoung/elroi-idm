@@ -1,0 +1,11 @@
+/* The account console masthead is always dark (PatternFly default), so the
+   header always shows the light-on-dark logo variant. */
+.pf-v5-c-masthead__brand img {
+  visibility: hidden;
+}
+.pf-v5-c-masthead__brand {
+  background-image: url("../qavats-horizontal-dark-600x160-v2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

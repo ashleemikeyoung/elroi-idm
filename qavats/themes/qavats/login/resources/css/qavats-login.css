@@ -1,0 +1,22 @@
+/* Qavats login branding.
+   Light backgrounds use the light-background logo (navy text);
+   dark mode uses the dark-background logo (pale text). */
+:root {
+  --keycloak-logo-url: url("../img/qavats-logo-light-v2.png");
+  --keycloak-bg-logo-url: none;
+  --keycloak-logo-height: 80px;
+  --keycloak-logo-width: 300px;
+  --keycloak-card-top-color: #6a9bd1;
+}
+.login-pf body,
+body#keycloak-bg {
+  background: #f3f6fa;
+}
+
+html.pf-v5-theme-dark {
+  --keycloak-logo-url: url("../img/qavats-logo-dark-v2.png");
+}
+html.pf-v5-theme-dark .login-pf body,
+html.pf-v5-theme-dark body#keycloak-bg {
+  background: #151a21;
+}

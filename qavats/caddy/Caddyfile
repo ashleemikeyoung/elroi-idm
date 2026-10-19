@@ -1,0 +1,22 @@
+id.qavatsit.com {
+	# Block Keycloak health/metrics at the proxy.
+	@blocked {
+		path /health /health/* /metrics /metrics/*
+	}
+	respond @blocked 404
+
+	# Site-wide Qavats favicons served at the root.
+	@favicons path /favicon.ico /favicon.svg /apple-touch-icon.png /apple-touch-icon-precomposed.png
+	handle @favicons {
+		rewrite /apple-touch-icon-precomposed.png /apple-touch-icon.png
+		root * /var/www/id-qavatsit
+		header Cache-Control "public, max-age=86400"
+		file_server
+	}
+
+	# Caddy reverse_proxy already sets X-Forwarded-For, X-Forwarded-Host and
+	# X-Forwarded-Proto by default; add the forwarded port explicitly.
+	reverse_proxy 127.0.0.1:8080 {
+		header_up X-Forwarded-Port {port}
+	}
+}

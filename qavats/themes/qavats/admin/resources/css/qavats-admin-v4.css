@@ -1,0 +1,24 @@
+/* The admin console masthead is always dark (PatternFly default, in both light
+   and dark theme modes), so the header always shows the light-on-dark logo
+   variant. The light variant remains the theme `logo` (the <img> src) for
+   light-background surfaces. */
+.pf-v5-c-masthead__brand img {
+  visibility: hidden;
+}
+.pf-v5-c-masthead__brand {
+  background-image: url("../qavats-horizontal-dark-600x160-v2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Non-master realm welcome page: large centered Qavats icon above the
+   heading (the full logo already appears in the masthead). */
+.keycloak__dashboard_icon {
+  content: url("../qavats-icon-v1.png");
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto var(--pf-v5-global--spacer--lg);
+}
