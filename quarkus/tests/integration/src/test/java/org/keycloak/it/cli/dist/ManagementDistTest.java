@@ -165,8 +165,8 @@ public class ManagementDistTest {
         runner.setRequestPort(8080);
 
         given().redirects().follow(false).when().get("/").then().statusCode(302).header("Location", is("/auth"));
-        when().get("/").then().statusCode(200).body(containsString("Welcome to Keycloak"));
-        when().get("/auth").then().statusCode(200).body(containsString("Welcome to Keycloak"));
+        when().get("/").then().statusCode(200).body(containsString("Welcome to ElRoi IdM"));
+        when().get("/auth").then().statusCode(200).body(containsString("Welcome to ElRoi IdM"));
     }
 
     private void assertRelativePath(LaunchResult result, String relativePath) {

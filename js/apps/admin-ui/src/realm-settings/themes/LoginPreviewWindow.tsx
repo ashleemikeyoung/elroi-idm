@@ -73,7 +73,7 @@ export const LoginPreviewWindow = ({ cssVars }: LoginPreviewWindowProps) => {
       `}</style>
       <div className="login-preview login-pf">
         <div className="kc-logo-text">
-          <span>Keycloak</span>
+          <span>ElRoi IdM</span>
         </div>
         <LoginPage loginTitle="Sign in to your account">
           <LoginForm

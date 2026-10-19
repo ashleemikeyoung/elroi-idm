@@ -371,7 +371,7 @@ public class SMTPConnectionTest {
                 if (from.length > 0) {
                     assertArrayEquals(from, Arrays.stream(message.getFrom()).map(Address::toString).toArray(String[]::new));
                 }
-                assertEquals("[KEYCLOAK] - SMTP test message", message.getSubject());
+                assertEquals("[ElRoi IdM] - SMTP test message", message.getSubject());
                 mailServer.runCleanup();
             } catch (Exception e) {
                 e.printStackTrace();

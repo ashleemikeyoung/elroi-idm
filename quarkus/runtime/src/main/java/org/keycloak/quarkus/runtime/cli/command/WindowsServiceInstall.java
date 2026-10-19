@@ -60,8 +60,8 @@ public class WindowsServiceInstall extends AbstractCommand {
     public static final String SERVICE_PASSWORD_ENV = "KC_SERVICE_PASSWORD";
 
     private static final String DEFAULT_SERVICE_NAME = "keycloak";
-    private static final String DEFAULT_DISPLAY_NAME = "Keycloak Server";
-    private static final String DEFAULT_DESCRIPTION = "Keycloak Identity and Access Management";
+    private static final String DEFAULT_DISPLAY_NAME = "ElRoi IdM Server";
+    private static final String DEFAULT_DESCRIPTION = "ElRoi IdM Identity and Access Management";
 
     @Option(names = "--name",
             description = "The name of the Windows service.",
