@@ -35,10 +35,19 @@ update realm_attribute set value = '<div class="kc-logo-text"><span>Qavats</span
 update realm_attribute set value = 'Qavats'
  where name in ('webAuthnPolicyRpEntityName', 'webAuthnPolicyRpEntityNamePasswordless')
    and value = 'keycloak';
--- every realm uses the qavats themes
+-- 2FA passkey prompt name left at the "keycloak" default (main and staff realms)
+update realm_attribute ra set value = r.display_name from realm r
+ where r.id = ra.realm_id and ra.name = 'webAuthnPolicyRpEntityName' and ra.value = 'keycloak';
+-- every realm (master, qavats, main, staff) uses the qavats themes explicitly
 update realm set login_theme = 'qavats', account_theme = 'qavats',
                  admin_theme = 'qavats', email_theme = 'qavats';
 ```
+
+## Server-wide default theme
+
+`/opt/keycloak/env/keycloak.env` sets `KC_SPI_THEME__DEFAULT=qavats`. Any realm without its own
+theme setting, including realms created later, uses the Qavats theme for login, account, admin
+and email pages. Restart Keycloak after changing it.
 
 ## Deploying theme changes
 
