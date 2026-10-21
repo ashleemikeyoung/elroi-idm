@@ -30,8 +30,8 @@ This directory is the source of truth; it mirrors what is deployed on the server
 Applied directly in Postgres, followed by a Keycloak restart:
 
 ```sql
--- master realm header and title
-update realm set display_name = 'Qavats' where name = 'master';
+-- master realm: header "Qavats" (displayNameHtml); tab "Sign in to ElRoi Id Manager" (display_name)
+update realm set display_name = 'ElRoi Id Manager' where name = 'master';
 update realm_attribute set value = '<div class="kc-logo-text"><span>Qavats</span></div>'
  where name = 'displayNameHtml' and value ilike '%keycloak%';
 -- name shown in passkey prompts (all realms)
