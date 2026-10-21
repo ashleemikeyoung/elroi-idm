@@ -21,6 +21,9 @@ This directory is the source of truth; it mirrors what is deployed on the server
 - **admin welcome page (non-master realms)**: the theme `logo` must start with `/` because that page
   builds the URL as `resourceUrl + logo`. CSS replaces the image with the 160px Qavats icon.
 - **email**: Qavats subject lines.
+- **welcome** (parent `keycloak`): exists only because `KC_SPI_THEME__DEFAULT=qavats` makes `/`
+  look for a qavats welcome theme. Without it `/` answers 400 "The theme is null" (no page, so no
+  favicon). The parent redirects `/` to the admin console once an admin exists.
 
 ## Realm settings (stored in the database, not in this repo)
 
