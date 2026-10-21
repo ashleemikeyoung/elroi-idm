@@ -20,7 +20,8 @@ This directory is the source of truth; it mirrors what is deployed on the server
 - **admin messages**: `welcomeText` (master realm welcome) and `introduction` (other realms'
   welcome) say "ElRoi Id Manager" instead of "Keycloak". English only.
 - **admin welcome page (non-master realms)**: the theme `logo` must start with `/` because that page
-  builds the URL as `resourceUrl + logo`. CSS replaces the image with the 160px Qavats icon.
+  builds the URL as `resourceUrl + logo`. CSS replaces the image with the ElRoi wordmark (dark-background
+  file in dark mode). The heading under "Welcome" is the realm's display name.
 - **email**: Qavats subject lines.
 - **welcome** (parent `keycloak`): exists only because `KC_SPI_THEME__DEFAULT=qavats` makes `/`
   look for a qavats welcome theme. Without it `/` answers 400 "The theme is null" (no page, so no
@@ -77,6 +78,5 @@ ssh ash@id.qavatsit.com '
 ## Source artwork
 
 From the Qavats Artwork folder: `qavats-horizontal-dark-600x160 v2.png` (for dark backgrounds),
-`qavats-horizontal-light-600x160 v2.png` (for light backgrounds) and `icon.png` (favicons and the
-welcome-page icon); `elroi-logo-light-text.svg` (dark ink, for light backgrounds) and
-`elroi-logo-dark-text.svg` (pale ink, for dark backgrounds) for the login page.
+`qavats-horizontal-light-600x160 v2.png` (for light backgrounds) and `icon.png` (favicons); `elroi-logo-light-text.svg` (dark ink, for light backgrounds) and
+`elroi-logo-dark-text.svg` (pale ink, for dark backgrounds) for the login page and the admin welcome page.

@@ -12,13 +12,16 @@
   background-size: contain;
 }
 
-/* Non-master realm welcome page: large centered Qavats icon above the
-   heading (the full logo already appears in the masthead). */
+/* Non-master realm welcome page: the ElRoi wordmark above the heading, the light-background
+   file normally and the dark-background one in dark mode. */
 .keycloak__dashboard_icon {
-  content: url("../qavats-icon-v1.png");
+  content: url("../elroi-logo-light-v1.svg");
   display: block;
-  width: 160px;
+  width: 280px;
   max-width: 100%;
   height: auto;
   margin: 0 auto var(--pf-v5-global--spacer--lg);
+}
+.pf-v5-theme-dark .keycloak__dashboard_icon {
+  content: url("../elroi-logo-dark-v1.svg");
 }
