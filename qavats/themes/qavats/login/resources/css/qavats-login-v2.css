@@ -1,0 +1,34 @@
+/* ElRoi Id Manager login branding: the ElRoi wordmark over the product name "Id Manager"
+   (markup in messages_en.properties, loginTitleHtml).
+   Light backgrounds use the light wordmark (dark ink); dark mode uses the dark one (pale ink). */
+:root {
+  --keycloak-logo-url: url("../img/elroi-logo-light-v1.svg");
+  --keycloak-bg-logo-url: none;
+  --keycloak-logo-height: 64px;
+  --keycloak-logo-width: 216px;
+  --keycloak-card-top-color: #6a9bd1;
+  --elroi-product-ink: #16191a;
+}
+.login-pf body,
+body#keycloak-bg {
+  background: #f3f6fa;
+}
+
+/* "Id Manager" under the wordmark. The parent styles the header as spaced capitals. */
+#kc-header-wrapper .elroi-product {
+  margin-top: 6px;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--elroi-product-ink);
+}
+
+html.pf-v5-theme-dark {
+  --keycloak-logo-url: url("../img/elroi-logo-dark-v1.svg");
+  --elroi-product-ink: #e6e8e3;
+}
+html.pf-v5-theme-dark .login-pf body,
+html.pf-v5-theme-dark body#keycloak-bg {
+  background: #151a21;
+}

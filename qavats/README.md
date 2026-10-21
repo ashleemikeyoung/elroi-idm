@@ -11,9 +11,10 @@ This directory is the source of truth; it mirrors what is deployed on the server
 
 ## Theme overview
 
-- **login** (parent `keycloak.v2`): light-background logo on a pale background, dark-background
-  logo in dark mode, set through the parent's `--keycloak-logo-*` CSS variables. Keycloak's grey
-  background artwork is removed. `styles` must keep `css/styles.css` or the parent layout is lost.
+- **login** (parent `keycloak.v2`), all realms: the ElRoi wordmark over the product name "Id Manager".
+  `loginTitleHtml` (messages_en) holds the markup; the wordmark is the parent's `--keycloak-logo-*`
+  CSS variables, light-background file normally and dark-background file in dark mode. Keycloak's
+  grey background artwork is removed. `styles` must keep `css/styles.css` or the parent layout is lost.
 - **account** (parent `keycloak.v3`) and **admin** (parent `keycloak.v2`): the masthead is always
   dark, so CSS swaps in the dark-background logo there. Qavats favicons.
 - **admin messages**: `welcomeText` (master realm welcome) and `introduction` (other realms'
@@ -77,4 +78,5 @@ ssh ash@id.qavatsit.com '
 
 From the Qavats Artwork folder: `qavats-horizontal-dark-600x160 v2.png` (for dark backgrounds),
 `qavats-horizontal-light-600x160 v2.png` (for light backgrounds) and `icon.png` (favicons and the
-welcome-page icon).
+welcome-page icon); `elroi-logo-light-text.svg` (dark ink, for light backgrounds) and
+`elroi-logo-dark-text.svg` (pale ink, for dark backgrounds) for the login page.
