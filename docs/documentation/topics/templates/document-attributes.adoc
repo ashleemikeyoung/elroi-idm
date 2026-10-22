@@ -1,5 +1,5 @@
-:project_name: Keycloak
-:project_name_full: Keycloak
+:project_name: ElRoi IdM
+:project_name_full: ElRoi IdM
 :project_community: true
 :project_product: false
 :project_version: 26.8.1

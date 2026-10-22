@@ -19,16 +19,33 @@ Requires JDK 21.
 ./mvnw clean install -DskipTests
 ```
 
-The server distribution is written to `quarkus/dist/target/`. See
-[docs/building.md](docs/building.md) for more options.
+The server distribution is written to `quarkus/dist/target/` as `keycloak-<version>.tar.gz`
+and `.zip`. The test harnesses find the archive by that name, so it stays the default. For a
+release, name the archive and its top-level directory after ElRoi IdM:
+
+```bash
+./mvnw clean install -DskipTests -Ddist.archive.file.prefix=elroi-idm
+```
+
+This writes `elroi-idm-<version>.tar.gz`, which unpacks to `elroi-idm-<version>/`. The launcher
+inside is still `bin/kc.sh`. See [docs/building.md](docs/building.md) for more options.
 
 ## Running
 
 ```bash
-tar -xzf quarkus/dist/target/keycloak-*.tar.gz
-cd keycloak-*/
+tar -xzf quarkus/dist/target/elroi-idm-*.tar.gz
+cd elroi-idm-*/
 bin/kc.sh start-dev
 ```
+
+## Documentation
+
+The guides in `docs/` name the product through the `{project_name}` attribute, set to ElRoi IdM in
+`docs/guides/attributes.adoc` and `docs/documentation/topics/templates/document-attributes.adoc`.
+Text that still says Keycloak is left as upstream wrote it on purpose: resource kinds such as
+`kind: Keycloak`, code, the Keycloak Operator, past Keycloak release and upgrade notes, and links
+to keycloak.org. Rewriting it would make those passages wrong and conflict with every upstream
+rebase.
 
 ## Deployment
 

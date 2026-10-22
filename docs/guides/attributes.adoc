@@ -1,4 +1,4 @@
-:project_name: Keycloak
+:project_name: ElRoi IdM
 :project_images: keycloak-images
 
 :jdk_version_latest: 25
