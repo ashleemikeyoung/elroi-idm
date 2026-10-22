@@ -5,7 +5,7 @@ This directory is the source of truth; it mirrors what is deployed on the server
 
 | Path in repo | Deployed to | Purpose |
 |---|---|---|
-| `themes/qavats/` | `/opt/keycloak/keycloak-26.8.1/themes/qavats/` | Login, account, admin and email theme |
+| `themes/qavats/` | `/opt/keycloak/current/themes/qavats/` | Login, account, admin and email theme |
 | `caddy/Caddyfile` | `/etc/caddy/Caddyfile` | Reverse proxy; serves root favicons |
 | `www/` | `/var/www/id-qavatsit/` | `/favicon.ico`, `/favicon.svg`, `/apple-touch-icon.png` |
 
@@ -57,9 +57,9 @@ and email pages. Restart Keycloak after changing it.
 ## Deploying theme changes
 
 ```bash
-rsync -a --delete qavats/themes/qavats/ ash@id.qavatsit.com:/opt/keycloak/keycloak-26.8.1/themes/qavats/
+rsync -a --delete qavats/themes/qavats/ ash@id.qavatsit.com:/opt/keycloak/current/themes/qavats/
 ssh ash@id.qavatsit.com '
-  rm -rf /opt/keycloak/keycloak-26.8.1/data/tmp/kc-gzip-cache/*/{login,admin,account}/qavats
+  rm -rf /opt/keycloak/current/data/tmp/kc-gzip-cache/*/{login,admin,account}/qavats
   sudo systemctl restart keycloak'
 ```
 
