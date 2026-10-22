@@ -31,7 +31,7 @@ public class VersionDistTest {
     @Test
     @Launch({ "--version" })
     void failNoTls(LaunchResult result) {
-        assertTrue(result.getOutput().contains("Keycloak ") && result.getOutput().contains("JVM: "),
+        assertTrue(result.getOutput().contains("ElRoi IdM ") && result.getOutput().contains("JVM: "),
                 () -> "The Output:\n" + result.getOutput() + "doesn't contains the expected string.");
     }
 

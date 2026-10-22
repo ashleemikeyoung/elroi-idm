@@ -33,7 +33,7 @@ import picocli.CommandLine.Parameters;
         header = BuildPasswordDenylist.HEADER,
         sortOptions = false,
         description = "%n" + BuildPasswordDenylist.HEADER
-                + "%n%nKeycloak's password-denylist policy rejects passwords found in a plaintext denylist file."
+                + "%n%nElRoi IdM's password-denylist policy rejects passwords found in a plaintext denylist file."
                 + " For large lists, loading from plaintext on every startup or reload can take seconds."
                 + " Run this command once after creating or updating DENYLIST_FILE to generate a pre-computed"
                 + " .bloom file. To use it, configure the password policy with the .bloom filename instead of"

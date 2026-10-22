@@ -30,9 +30,9 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
 @Command(name = WindowsServiceUninstall.NAME,
-        header = "Uninstall Keycloak Windows service.",
+        header = "Uninstall ElRoi IdM Windows service.",
         description = {
-                "%nUninstall Keycloak Windows service installed with 'kc.bat tools windows-service install'.",
+                "%nUninstall ElRoi IdM Windows service installed with 'kc.bat tools windows-service install'.",
                 "",
                 "This command requires prunsrv.exe to be present in the bin directory."
         },
@@ -70,7 +70,7 @@ public class WindowsServiceUninstall extends AbstractCommand {
 
         Path homePath = Environment.getHomePath().orElseThrow(() ->
                 new CommandLine.ExecutionException(spec.commandLine(),
-                        "Could not determine Keycloak home directory"));
+                        "Could not determine ElRoi IdM home directory"));
 
         Path prunsrvPath = homePath.resolve("bin").resolve("prunsrv.exe");
         if (!Files.exists(prunsrvPath)) {
@@ -79,7 +79,7 @@ public class WindowsServiceUninstall extends AbstractCommand {
             executionError(spec.commandLine(), "Apache Commons Daemon (Procrun) executable not found at " + prunsrvPath);
         }
 
-        picocli.println("Deleting Keycloak service '" + serviceName + "'...");
+        picocli.println("Deleting ElRoi IdM service '" + serviceName + "'...");
 
         List<String> command = new ArrayList<>();
         command.add(prunsrvPath.toString());

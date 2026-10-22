@@ -33,9 +33,9 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
 
 @Command(name = WindowsServiceInstall.NAME,
-        header = "Install Keycloak as a Windows service.",
+        header = "Install ElRoi IdM as a Windows service.",
         description = {
-            "%nInstall a Windows service that runs Keycloak using 'kc.bat start'.",
+            "%nInstall a Windows service that runs ElRoi IdM using 'kc.bat start'.",
             "",
             "This command requires prunsrv.exe to be present in the bin directory.",
             "Download it from https://downloads.apache.org/commons/daemon/binaries/windows/",
@@ -123,7 +123,7 @@ public class WindowsServiceInstall extends AbstractCommand {
 
         Path homePath = Environment.getHomePath().orElseThrow(() -> 
             new CommandLine.ExecutionException(spec.commandLine(), 
-                "Could not determine Keycloak home directory"));
+                "Could not determine ElRoi IdM home directory"));
 
         Path prunsrvPath = homePath.resolve("bin").resolve("prunsrv.exe");
         if (!Files.exists(prunsrvPath)) {
@@ -156,7 +156,7 @@ public class WindowsServiceInstall extends AbstractCommand {
             executionError(spec.commandLine(), "Failed to create log directory: " + logPath, e);
         }
 
-        picocli.println("Creating Keycloak Windows service '" + serviceName + "'...");
+        picocli.println("Creating ElRoi IdM Windows service '" + serviceName + "'...");
         picocli.println("Service will run: " + kcBatPath + " start");
 
         List<String> command = buildPrunsrvCommand(prunsrvPath, homePath, kcBatPath, logPath);

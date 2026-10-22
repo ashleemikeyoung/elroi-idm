@@ -20,7 +20,7 @@ package org.keycloak.quarkus.runtime.cli.command;
 import picocli.CommandLine.Command;
 
 @Command(name = WindowsService.NAME,
-        description = "Manage Keycloak as a Windows service.",
+        description = "Manage ElRoi IdM as a Windows service.",
         subcommands = {WindowsServiceInstall.class, WindowsServiceUninstall.class})
 public class WindowsService {
 

@@ -33,7 +33,7 @@ import static org.keycloak.client.registration.cli.KcRegMain.CMD;
 
 @Command(name = "kcreg",
 header = {
-        "Keycloak - Open Source Identity and Access Management",
+        "ElRoi IdM - Open Source Identity and Access Management",
         "",
         "Find more information at: https://www.keycloak.org/docs/latest"
 },

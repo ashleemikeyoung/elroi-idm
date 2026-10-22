@@ -30,7 +30,7 @@ import static org.keycloak.client.cli.util.OsUtil.PROMPT;
 
 @Command(name = "kcadm",
 header = {
-        "Keycloak - Open Source Identity and Access Management",
+        "ElRoi IdM - Open Source Identity and Access Management",
         "",
         "Find more information at: https://www.keycloak.org/docs/latest"
 },

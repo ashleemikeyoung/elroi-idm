@@ -33,12 +33,12 @@ import static org.keycloak.quarkus.runtime.cli.Picocli.NO_PARAM_LABEL;
 
 @Command(name = "keycloak",
         header = {
-                "Keycloak - Open Source Identity and Access Management",
+                "ElRoi IdM - Open Source Identity and Access Management",
                 "",
                 "Find more information at: https://www.keycloak.org/docs/latest"
         },
         description = {
-                "%nUse this command-line tool to manage your Keycloak cluster."
+                "%nUse this command-line tool to manage your ElRoi IdM cluster."
         },
         footerHeading = "Examples:",
         footer = { "  Start the server in development mode for local development or testing:%n%n"
@@ -55,7 +55,7 @@ import static org.keycloak.quarkus.runtime.cli.Picocli.NO_PARAM_LABEL;
                 "Use \"${COMMAND-NAME} <command> --help\" for more information about other commands."
         },
         version = {
-            "Keycloak ${sys:kc.version}",
+            "ElRoi IdM ${sys:kc.version}",
             "JVM: ${java.version} (${java.vendor} ${java.vm.name} ${java.vm.version})",
             "OS: ${os.name} ${os.version} ${os.arch}"
         },
