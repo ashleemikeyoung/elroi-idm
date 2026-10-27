@@ -11,17 +11,20 @@ This directory is the source of truth; it mirrors what is deployed on the server
 
 ## Theme overview
 
-- **login** (parent `keycloak.v2`), all realms: the ElRoi wordmark over the product name "Id Manager".
-  `loginTitleHtml` (messages_en) holds the markup; the wordmark is the parent's `--keycloak-logo-*`
-  CSS variables, light-background file normally and dark-background file in dark mode. Keycloak's
+- **login** (parent `keycloak.v2`), all realms: the ElRoi leaf over the name "Simlah", the
+  identity manager's brand (Hebrew for cloak; it was "ElRoi Id Manager" until 2026-10-27).
+  `loginTitleHtml` (messages_en) holds the markup; the leaf is the parent's `--keycloak-logo-*`
+  CSS variables, the dark blue file normally and the pale file in dark mode. Keycloak's
   grey background artwork is removed. `styles` must keep `css/styles.css` or the parent layout is lost.
 - **account** (parent `keycloak.v3`) and **admin** (parent `keycloak.v2`): the masthead is always
   dark, so CSS swaps in the dark-background logo there. Qavats favicons.
-- **admin messages**: `welcomeText` (master realm welcome) and `introduction` (other realms'
-  welcome) say "ElRoi Id Manager" instead of "Keycloak". English only.
+- **admin, account and email messages** (English only): `welcomeText` and `introduction` say
+  "Simlah", and every parent message naming the server's built-in product name "ElRoi IdM" is
+  repeated here with "Simlah" (generated from the parent files; regenerate after an upgrade). The
+  admin and account console titles are "Simlah" and "Simlah Account Console".
 - **admin welcome page (non-master realms)**: the theme `logo` must start with `/` because that page
-  builds the URL as `resourceUrl + logo`. CSS replaces the image with the ElRoi wordmark (dark-background
-  file in dark mode). The heading under "Welcome" is the realm's display name.
+  builds the URL as `resourceUrl + logo`. CSS replaces the image with the ElRoi leaf (pale file in dark
+  mode). The heading under "Welcome" is the realm's display name.
 - **email**: Qavats subject lines.
 - **welcome** (parent `keycloak`): exists only because `KC_SPI_THEME__DEFAULT=qavats` makes `/`
   look for a qavats welcome theme. Without it `/` answers 400 "The theme is null" (no page, so no
@@ -32,8 +35,8 @@ This directory is the source of truth; it mirrors what is deployed on the server
 Applied directly in Postgres, followed by a Keycloak restart:
 
 ```sql
--- master and qavats realms: header "Qavats" (displayNameHtml); tab "Sign in to ElRoi Id Manager" (display_name)
-update realm set display_name = 'ElRoi Id Manager' where name in ('master', 'qavats');
+-- master and qavats realms: header "Qavats" (displayNameHtml); tab "Sign in to Simlah" (display_name)
+update realm set display_name = 'Simlah' where name in ('master', 'qavats');
 update realm_attribute set value = '<div class="kc-logo-text"><span>Qavats</span></div>'
  where name = 'displayNameHtml' and value ilike '%keycloak%';
 -- name shown in passkey prompts (all realms)
@@ -87,5 +90,6 @@ ssh ash@id.qavatsit.com '
 ## Source artwork
 
 From the Qavats Artwork folder: `qavats-horizontal-dark-600x160 v2.png` (for dark backgrounds),
-`qavats-horizontal-light-600x160 v2.png` (for light backgrounds) and `icon.png` (favicons); `elroi-logo-light-text.svg` (dark ink, for light backgrounds) and
-`elroi-logo-dark-text.svg` (pale ink, for dark backgrounds) for the login page and the admin welcome page.
+`qavats-horizontal-light-600x160 v2.png` (for light backgrounds) and `icon.png` (favicons); the leaf of `elroi-logo-light-text.svg` (dark blue, for light backgrounds) and of
+`elroi-logo-dark-text.svg` (pale, for dark backgrounds) for the login page and the admin welcome page
+(`elroi-leaf-*-v1.svg`).

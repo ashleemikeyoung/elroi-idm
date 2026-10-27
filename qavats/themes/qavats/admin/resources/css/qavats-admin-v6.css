@@ -12,16 +12,16 @@
   background-size: contain;
 }
 
-/* Non-master realm welcome page: the ElRoi wordmark above the heading, the light-background
-   file normally and the dark-background one in dark mode. */
+/* Non-master realm welcome page: the ElRoi leaf (Simlah's mark) above the heading, the dark blue
+   file normally and the pale one in dark mode. */
 .keycloak__dashboard_icon {
-  content: url("../elroi-logo-light-v1.svg");
+  content: url("../elroi-leaf-light-v1.svg");
   display: block;
-  width: 280px;
+  width: 96px;
   max-width: 100%;
   height: auto;
   margin: 0 auto var(--pf-v5-global--spacer--lg);
 }
 .pf-v5-theme-dark .keycloak__dashboard_icon {
-  content: url("../elroi-logo-dark-v1.svg");
+  content: url("../elroi-leaf-dark-v1.svg");
 }

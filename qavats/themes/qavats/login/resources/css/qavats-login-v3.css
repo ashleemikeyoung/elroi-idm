@@ -1,0 +1,34 @@
+/* Simlah login branding: the ElRoi leaf over the name "Simlah"
+   (markup in messages_en.properties, loginTitleHtml).
+   Light backgrounds use the dark blue leaf; dark mode uses the pale one. */
+:root {
+  --keycloak-logo-url: url("../img/elroi-leaf-light-v1.svg");
+  --keycloak-bg-logo-url: none;
+  --keycloak-logo-height: 64px;
+  --keycloak-logo-width: 53px;
+  --keycloak-card-top-color: #6a9bd1;
+  --simlah-name-ink: #16191a;
+}
+.login-pf body,
+body#keycloak-bg {
+  background: #f3f6fa;
+}
+
+/* "Simlah" under the leaf. The parent styles the header as spaced capitals. */
+#kc-header-wrapper .simlah-name {
+  margin-top: 8px;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--simlah-name-ink);
+}
+
+html.pf-v5-theme-dark {
+  --keycloak-logo-url: url("../img/elroi-leaf-dark-v1.svg");
+  --simlah-name-ink: #e6e8e3;
+}
+html.pf-v5-theme-dark .login-pf body,
+html.pf-v5-theme-dark body#keycloak-bg {
+  background: #151a21;
+}
