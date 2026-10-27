@@ -60,11 +60,11 @@ and email pages. Restart Keycloak after changing it.
 ## Deploying theme changes
 
 ```bash
-rsync -a --delete qavats/themes/qavats/ ash@id.qavatsit.com:/opt/keycloak/current/themes/qavats/
-ssh ash@id.qavatsit.com '
-  rm -rf /opt/keycloak/current/data/tmp/kc-gzip-cache/*/{login,admin,account}/qavats
-  sudo systemctl restart keycloak'
+qavats/deploy-theme.sh
 ```
+
+It copies the theme over the tailnet (`ash@id`; public SSH is closed), clears the gzip cache and
+restarts the server. Sign-in is unavailable for every app for about a minute.
 
 Gotchas:
 
