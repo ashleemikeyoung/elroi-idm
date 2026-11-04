@@ -1,8 +1,8 @@
 ElRoi IdM
-Copyright (C) 2026 Ash Young
+Copyright (C) 2026 Qavats Ranch, LLC
 
 ElRoi IdM is licensed under the GNU Affero General Public License, version 3
-(see LICENSE.txt).
+or (at your option) any later version (see LICENSE.txt).
 
 ElRoi IdM is derived from Keycloak (https://www.keycloak.org,
 https://github.com/keycloak/keycloak), version 26.8.1.
@@ -15,7 +15,11 @@ Files that originate from Keycloak keep their original copyright and Apache
 License 2.0 notices. Changes made to those files by the ElRoi IdM project are
 recorded in the Git history of this repository. Original ElRoi IdM files and
 contributions are licensed under the GNU Affero General Public License,
-version 3.
+version 3 or later (SPDX: AGPL-3.0-or-later).
+
+ElRoi IdM is the work and property of Qavats Ranch, LLC. The names and marks
+ElRoi, Simlah and Qavats, including their logos, belong to Qavats Ranch, LLC and
+are not licensed under the AGPL.
 
 "Keycloak" is a trademark of its respective owners. ElRoi IdM is not
 affiliated with, endorsed by, or sponsored by the Keycloak project or Red Hat.

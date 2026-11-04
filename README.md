@@ -58,7 +58,8 @@ See [SECURITY.md](SECURITY.md).
 
 ## License
 
-ElRoi IdM is licensed under the [GNU Affero General Public License v3](LICENSE.txt).
+ElRoi IdM is Copyright © 2026 Qavats Ranch, LLC, licensed under the
+[GNU Affero General Public License v3 or later](LICENSE.txt).
 
 It includes code from Keycloak, which is licensed under the
 [Apache License 2.0](LICENSE-APACHE-2.0.txt). Files from Keycloak keep their original copyright
